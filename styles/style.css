@@ -14,7 +14,6 @@
 body {
   background: var(--bgc);
   font-family: "Inter", sans-serif;
-  max-height: 100vh;
 }
 .container {
   max-width: 1000px;
@@ -29,13 +28,20 @@ header {
 .themes {
   margin-top: 1.3em;
 }
+.themes-icon {
+  cursor: pointer;
+}
 header h1 {
   font-family: "Playfair Display", serif;
   font-size: 2.5rem;
   font-weight: 800;
+  color: var(--sec-color);
 }
 main {
   padding: 2em 0;
+}
+h2 {
+  color: var(--sec-color);
 }
 main hr {
   margin: 0.7em 0;
@@ -52,6 +58,8 @@ main hr {
   gap: 20px;
 }
 .task-input {
+  background-color: var(--bgc);
+  color: var(--sec-color);
   padding: 10px;
   border: 1px solid #cccccc;
   border-radius: 5px;
@@ -74,7 +82,7 @@ main hr {
   font-size: 1.2rem;
   font-weight: 700;
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--sec-color);
   width: 190px;
   border: none;
   padding: 10px 10px;
@@ -114,7 +122,7 @@ main hr {
 }
 
 .checkbox input:checked ~ .checkmark {
-  background-color: #ffe6e6;
+  background-color: var(--bgc);
 }
 
 .checkbox input:checked ~ .checkmark::after {
@@ -134,10 +142,11 @@ main hr {
   align-items: center;
   justify-content: space-between;
   padding: 10px;
-  border: 1px solid #4141419e;
+  border: 1px solid var(--sec-color);
   border-radius: 5px;
   margin: 10px 0;
-  background-color: #ffffff;
+  background-color: var(--bgc);
+
   gap: 20px;
   max-width: 100%;
 }
@@ -150,6 +159,7 @@ main hr {
 }
 
 .task {
+  color: var(--sec-color);
   font-size: 2rem;
   font-weight: 400;
   margin-bottom: 10px;
@@ -163,4 +173,71 @@ main hr {
 }
 .delete-icon:hover {
   opacity: 0.8;
+}
+@media (max-width: 1025px) {
+  .container {
+    max-width: 800px;
+  }
+}
+@media (max-width: 820px) {
+  .container {
+    max-width: 600px;
+  }
+  .task-input {
+    width: 500px;
+  }
+  .add-button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 625px) {
+  .container {
+    padding: 1em 10px;
+    width: 500px;
+  }
+  .task-input {
+    width: 500px;
+  }
+  .add-button {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 510px) {
+  .container {
+    width: 100%;
+  }
+  main {
+    padding: 0;
+  }
+  .task-input {
+    width: 300px;
+  }
+}
+@media (max-width: 380px) {
+  header h1 {
+    font-size: 1.5rem;
+  }
+  h2 {
+    font-size: 1rem;
+  }
+  hr {
+    display: none;
+  }
+  main {
+    padding: 0;
+  }
+  .container {
+    padding: 0.2em 10px;
+    width: 100%;
+  }
+  .input-container {
+    gap: 5%;
+    width: 100%;
+  }
+  .add-button {
+    width: 25%;
+  }
+  .task-input {
+    width: 70%;
+  }
 }
